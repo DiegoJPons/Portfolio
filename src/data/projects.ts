@@ -63,6 +63,7 @@ export const projects: Project[] = [
     category: "web",
     featured: true,
     githubUrl: "https://github.com/DiegoJPons/realtime-spotify-clone",
+    liveUrl: "https://realtime-spotify-clone-3ldp.onrender.com/",
   },
   {
     id: "pokedex",
@@ -86,6 +87,7 @@ export const projects: Project[] = [
     ],
     category: "web",
     githubUrl: "https://github.com/DiegoJPons/Pokedex",
+    liveUrl: "https://pokedex-mbe4.onrender.com/",
   },
   {
     id: "holdem",
