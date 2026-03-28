@@ -2,12 +2,14 @@
 
 @theme {
   --font-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-display: "Outfit", "Instrument Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --color-surface: #0c1222;
-  --color-surface-elevated: #121a2e;
-  --color-border-subtle: rgba(148, 163, 184, 0.12);
-  --color-accent: #7dd3fc;
-  --color-accent-muted: #38bdf8;
+  --color-surface: #070a12;
+  --color-surface-mid: #0c1222;
+  --color-surface-elevated: #111827;
+  --color-border-subtle: rgba(148, 163, 184, 0.1);
+  --color-accent: #22d3ee;
+  --color-accent-warm: #fbbf24;
 }
 
 html {
@@ -24,5 +26,81 @@ body {
 }
 
 ::selection {
-  background: rgba(125, 211, 252, 0.25);
+  background: rgba(34, 211, 238, 0.22);
+}
+
+/* Subtle noise overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    125deg,
+    #f8fafc 0%,
+    #e2e8f0 25%,
+    #22d3ee 55%,
+    #a78bfa 85%,
+    #fbbf24 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 10s ease infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gradient {
+    animation: none;
+    background: linear-gradient(125deg, #f8fafc, #22d3ee, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
