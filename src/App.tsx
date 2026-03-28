@@ -7,6 +7,7 @@ const LINKS = {
   email: "mailto:diegojean1995@gmail.com",
   github: "https://github.com/DiegoJPons",
   linkedin: "https://linkedin.com/in/diego-pons-",
+  resumePdf: "/resume.pdf",
 } as const;
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
           </a>
           <nav className="flex items-center gap-1 sm:gap-2">
             {[
+              ["Resume", "#resume"],
               ["Web", "#web"],
               ["Systems", "#systems"],
               ["GitHub", LINKS.github],
@@ -105,6 +107,12 @@ export default function App() {
               >
                 Email →
               </a>
+              <a
+                href="#resume"
+                className="rounded-2xl px-4 py-3.5 font-mono text-sm font-medium text-slate-500 transition hover:text-slate-300"
+              >
+                Résumé ↓
+              </a>
             </div>
           </div>
 
@@ -123,6 +131,40 @@ export default function App() {
                 </span>
               )
             )}
+          </div>
+        </section>
+
+        <section id="resume" className="mt-24 scroll-mt-28 md:mt-28">
+          <div className="animate-fade-up flex flex-col justify-between gap-6 rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.06] to-transparent p-6 md:flex-row md:items-center md:gap-10 md:p-8">
+            <div className="min-w-0">
+              <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-violet-300/90">
+                00 — Résumé
+              </p>
+              <h2 className="font-['Outfit'] mt-3 text-2xl font-bold tracking-tight text-white md:text-3xl">
+                Download my CV
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-400 md:text-base">
+                One-page PDF (Stony Brook CS, projects, and skills). Open in
+                your browser or save for applications.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <a
+                href={LINKS.resumePdf}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center justify-center rounded-2xl border border-violet-400/35 bg-violet-500/15 px-6 py-3.5 font-['Outfit'] text-sm font-semibold text-violet-100 transition hover:border-violet-300/50 hover:bg-violet-500/25"
+              >
+                View PDF
+              </a>
+              <a
+                href={LINKS.resumePdf}
+                download="Diego-Pons-Resume.pdf"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/[0.12] bg-white/[0.04] px-6 py-3.5 font-['Outfit'] text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/[0.08]"
+              >
+                Download
+              </a>
+            </div>
           </div>
         </section>
 
@@ -209,6 +251,14 @@ export default function App() {
               className="text-slate-400 transition hover:text-cyan-300"
             >
               Email
+            </a>
+            <a
+              href={LINKS.resumePdf}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-slate-400 transition hover:text-cyan-300"
+            >
+              Résumé
             </a>
           </div>
         </div>
