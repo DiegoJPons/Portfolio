@@ -10,7 +10,10 @@ export type Project = {
   category: ProjectCategory;
   featured?: boolean;
   liveUrl?: string;
-  githubUrl: string;
+  /** Public repo link; omit if not public yet (use sourceNote). */
+  githubUrl?: string;
+  /** Shown instead of GitHub when the repo is private or not linkable. */
+  sourceNote?: string;
 };
 
 export const projects: Project[] = [
@@ -117,7 +120,8 @@ export const projects: Project[] = [
     ],
     stack: ["C", "Binary I/O", "Bitwise ops", "Criterion", "Specs"],
     category: "systems",
-    githubUrl: "https://github.com/DiegoJPons",
+    sourceNote:
+      "Coursework this semester — the repo stays private until the course ends. I’m happy to share access or walk through the code after that, or discuss it in an interview.",
   },
   {
     id: "fs-emulator",

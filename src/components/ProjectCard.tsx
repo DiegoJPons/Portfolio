@@ -57,27 +57,38 @@ export function ProjectCard({ project }: Props) {
           </span>
         ))}
       </div>
-      <div className="mt-6 flex flex-wrap gap-3 border-t border-[var(--color-border-subtle)] pt-5">
-        {project.liveUrl ? (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-sky-400 transition hover:text-sky-300"
-          >
-            Live demo
-            <ExternalIcon />
-          </a>
+      <div className="mt-6 flex flex-col gap-3 border-t border-[var(--color-border-subtle)] pt-5">
+        {project.liveUrl || project.githubUrl ? (
+          <div className="flex flex-wrap gap-3">
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-sky-400 transition hover:text-sky-300"
+              >
+                Live demo
+                <ExternalIcon />
+              </a>
+            ) : null}
+            {project.githubUrl ? (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition hover:text-white"
+              >
+                GitHub
+                <ExternalIcon />
+              </a>
+            ) : null}
+          </div>
         ) : null}
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-300 transition hover:text-white"
-        >
-          GitHub
-          <ExternalIcon />
-        </a>
+        {project.sourceNote ? (
+          <p className="m-0 text-sm leading-relaxed text-slate-500">
+            {project.sourceNote}
+          </p>
+        ) : null}
       </div>
     </article>
   );
