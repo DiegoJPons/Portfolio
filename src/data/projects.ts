@@ -13,7 +13,6 @@ export type Project = {
   githubUrl: string;
 };
 
-/** Update githubUrl (and liveUrl) to match your real repositories and deployments. */
 export const projects: Project[] = [
   {
     id: "playlister",
@@ -37,6 +36,7 @@ export const projects: Project[] = [
     ],
     category: "web",
     featured: true,
+    liveUrl: "https://playlister-eight.vercel.app",
     githubUrl: "https://github.com/DiegoJPons/Playlister",
   },
   {
