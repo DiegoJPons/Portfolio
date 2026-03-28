@@ -2,7 +2,7 @@
 
 Personal site showcasing full-stack web projects and systems work (Stony Brook CS).
 
-**Live site:** _add your URL after deploy (e.g. Vercel / Netlify)_
+**Live site:** https://portfolio-henna-nine-76.vercel.app/
 
 ## Stack
 
