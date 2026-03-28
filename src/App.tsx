@@ -111,7 +111,7 @@ export default function App() {
                 href="#resume"
                 className="rounded-2xl px-4 py-3.5 font-mono text-sm font-medium text-slate-500 transition hover:text-slate-300"
               >
-                Résumé ↓
+                Resume ↓
               </a>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function App() {
           <div className="animate-fade-up flex flex-col justify-between gap-6 rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.06] to-transparent p-6 md:flex-row md:items-center md:gap-10 md:p-8">
             <div className="min-w-0">
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-violet-300/90">
-                00 — Résumé
+                00 — Resume
               </p>
               <h2 className="font-['Outfit'] mt-3 text-2xl font-bold tracking-tight text-white md:text-3xl">
                 Download my CV
@@ -258,7 +258,7 @@ export default function App() {
               rel="noreferrer noopener"
               className="text-slate-400 transition hover:text-cyan-300"
             >
-              Résumé
+              Resume
             </a>
           </div>
         </div>
