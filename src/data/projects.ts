@@ -215,7 +215,7 @@ export const projects: Project[] = [
   },
   {
     id: "skyscrapers-cse220",
-    title: "Skyscrapers puzzle (CSE 220)",
+    title: "Skyscrapers puzzle",
     timeframe: "Spring 2025",
     tagline:
       "Terminal Skyscrapers game and heuristic solver in C—strict stdin/stdout I/O for boards from 4×4 to 8×8.",

@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal site showcasing full-stack web projects and systems work (Stony Brook CS).
+Personal site showcasing full-stack web projects and low-level C work (Stony Brook CS).
 
 **Live site:** https://portfolio-henna-nine-76.vercel.app/
 
