@@ -25,7 +25,7 @@ export default function App() {
           </a>
           <nav className="flex flex-wrap items-center justify-end gap-1">
             {[
-              ["Resume", "#resume"],
+              ["Resume", LINKS.resumePdf],
               ["Web", "#web"],
               ["Low-level", "#systems"],
               ["GitHub", LINKS.github],
@@ -33,7 +33,7 @@ export default function App() {
               <a
                 key={label}
                 href={href}
-                {...(href.startsWith("http")
+                {...(!href.startsWith("#")
                   ? { target: "_blank", rel: "noreferrer noopener" }
                   : {})}
                 className="rounded-md px-3 py-2 text-sm text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900"
@@ -86,7 +86,9 @@ export default function App() {
               Email
             </a>
             <a
-              href="#resume"
+              href={LINKS.resumePdf}
+              target="_blank"
+              rel="noreferrer noopener"
               className="rounded-md px-3 py-2.5 text-sm text-zinc-500 transition hover:text-zinc-800"
             >
               Resume
@@ -104,40 +106,6 @@ export default function App() {
                 </span>
               )
             )}
-          </div>
-        </section>
-
-        <section id="resume" className="mt-16 scroll-mt-24 md:mt-20">
-          <div className="flex flex-col justify-between gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm md:flex-row md:items-center md:gap-10 md:p-8">
-            <div className="min-w-0">
-              <p className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-                Resume
-              </p>
-              <h2 className="mt-2 text-xl font-semibold text-zinc-900 md:text-2xl">
-                PDF
-              </h2>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-zinc-600">
-                Stony Brook CS, projects, and skills. Open in your browser or
-                download for applications.
-              </p>
-            </div>
-            <div className="flex shrink-0 flex-wrap gap-3">
-              <a
-                href={LINKS.resumePdf}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center justify-center rounded-md bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-800"
-              >
-                View PDF
-              </a>
-              <a
-                href={LINKS.resumePdf}
-                download="Diego-Pons-Resume.pdf"
-                className="inline-flex items-center justify-center rounded-md border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-800 transition hover:bg-zinc-50"
-              >
-                Download
-              </a>
-            </div>
           </div>
         </section>
 
